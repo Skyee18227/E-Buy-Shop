@@ -9,7 +9,7 @@ const SLIDES = [
     cta: "Shop Now",
     href: "/products?category=electronics",
     bg: "from-blue-700 to-indigo-900",
-    emoji: "⚡",
+    emoji: "",
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const SLIDES = [
     cta: "Explore",
     href: "/products?category=women's clothing",
     bg: "from-pink-500 to-rose-700",
-    emoji: "✨",
+    emoji: "",
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ const SLIDES = [
     cta: "Discover",
     href: "/products?category=jewelery",
     bg: "from-amber-500 to-orange-700",
-    emoji: "💎",
+    emoji: "",
   },
 ];
 

@@ -14,7 +14,7 @@ export default function Cart() {
   if (ordered) {
     return (
       <div className="max-w-lg mx-auto px-4 py-24 text-center">
-        <div className="text-6xl mb-4">🎉</div>
+        <div className="text-6xl mb-4"></div>
         <h1 className="text-2xl font-bold text-gray-900 mb-2">Order Placed!</h1>
         <p className="text-gray-500 mb-8">
           Thank you for shopping with E-Buy. Your order is being processed and will be
@@ -33,7 +33,7 @@ export default function Cart() {
   if (cart.length === 0) {
     return (
       <div className="max-w-lg mx-auto px-4 py-24 text-center">
-        <div className="text-6xl mb-4">🛒</div>
+        <div className="text-6xl mb-4"></div>
         <h1 className="text-2xl font-bold text-gray-900 mb-2">Your cart is empty</h1>
         <p className="text-gray-500 mb-8">Add some products to get started.</p>
         <Link

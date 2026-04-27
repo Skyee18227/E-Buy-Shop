@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const TEAM = [
-  { name: "Alex Rivera", role: "Founder & CEO", emoji: "👨‍💼" },
-  { name: "Maya Chen",   role: "Head of Products", emoji: "👩‍💻" },
-  { name: "Jordan Lee",  role: "Customer Success", emoji: "🤝" },
+  { name: "Alex Rivera", role: "Founder & CEO", emoji: "" },
+  { name: "Maya Chen",   role: "Head of Products", emoji: "" },
+  { name: "Jordan Lee",  role: "Customer Success", emoji: "" },
 ];
 
 const STATS = [

@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <span className="text-2xl">🛒</span>
+              <span className="text-2xl"></span>
               <span className="text-xl font-extrabold text-white">E-Buy</span>
             </div>
             <p className="text-sm leading-relaxed text-gray-400">

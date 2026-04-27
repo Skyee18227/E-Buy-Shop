@@ -26,7 +26,7 @@ export default function Navbar({ onSearchOpen, onAiOpen }) {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 shrink-0">
-            <span className="text-2xl">🛒</span>
+            <span className="text-2xl"></span>
             <span className="text-xl font-extrabold text-primary-700 tracking-tight">
               E-Buy
             </span>

@@ -120,13 +120,13 @@ export default function ProductDetail() {
           {/* Perks */}
           <ul className="mt-4 space-y-2 text-sm text-gray-500">
             <li className="flex items-center gap-2">
-              <span>🚚</span> Free shipping on orders over $50
+              <span></span> Free shipping on orders over $50
             </li>
             <li className="flex items-center gap-2">
-              <span>↩️</span> 30-day hassle-free returns
+              <span></span> 30-day hassle-free returns
             </li>
             <li className="flex items-center gap-2">
-              <span>🔒</span> Secure, encrypted checkout
+              <span></span> Secure, encrypted checkout
             </li>
           </ul>
         </div>

@@ -5,10 +5,10 @@ import ProductCard from "../components/ProductCard";
 import { useProducts } from "../hooks/useFakeStore";
 
 const CATEGORIES = [
-  { label: "Electronics", value: "electronics", emoji: "📱" },
-  { label: "Jewelry",     value: "jewelery",    emoji: "💎" },
-  { label: "Men's",       value: "men's clothing", emoji: "👔" },
-  { label: "Women's",     value: "women's clothing", emoji: "👗" },
+  { label: "Electronics", value: "electronics", emoji: "" },
+  { label: "Jewelry",     value: "jewelery",    emoji: "" },
+  { label: "Men's",       value: "men's clothing", emoji: "" },
+  { label: "Women's",     value: "women's clothing", emoji: "" },
 ];
 
 function Spinner() {
@@ -69,9 +69,9 @@ export default function Home() {
       <section className="bg-primary-700 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           {[
-            { icon: "🚚", title: "Free Shipping", desc: "On orders over $50" },
-            { icon: "↩️", title: "30-Day Returns", desc: "Hassle-free returns" },
-            { icon: "🔒", title: "Secure Payments", desc: "SSL-encrypted checkout" },
+            { icon: "", title: "Free Shipping", desc: "On orders over $50" },
+            { icon: "", title: "30-Day Returns", desc: "Hassle-free returns" },
+            { icon: "", title: "Secure Payments", desc: "SSL-encrypted checkout" },
           ].map(({ icon, title, desc }) => (
             <div key={title} className="flex flex-col items-center gap-2">
               <span className="text-4xl">{icon}</span>
