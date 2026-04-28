@@ -3,74 +3,69 @@ import { Link } from "react-router-dom";
 
 const TEAM = [
   { name: "Alex Rivera", role: "Founder & CEO", emoji: "" },
-  { name: "Maya Chen",   role: "Head of Products", emoji: "" },
-  { name: "Jordan Lee",  role: "Customer Success", emoji: "" },
+  { name: "Maya Chen", role: "Head of Products", emoji: "" },
+  { name: "Jordan Lee", role: "Customer Success", emoji: "" },
 ];
 
 const STATS = [
-  { label: "Products",       value: "500+" },
+  { label: "Products", value: "500+" },
   { label: "Happy Customers", value: "12 K+" },
-  { label: "Countries",      value: "30+" },
-  { label: "Years Online",   value: "5" },
+  { label: "Countries", value: "30+" },
+  { label: "Years Online", value: "5" },
 ];
 
 export default function About() {
   return (
     <div>
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white py-24 px-4 text-center">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-4">About E-Buy Shop</h1>
-        <p className="max-w-xl mx-auto text-primary-200 text-lg leading-relaxed">
+      <section className="bg-gradient-to-br from-primary-700 to-primary-900 px-4 py-24 text-center text-white">
+        <h1 className="mb-4 text-4xl font-extrabold md:text-5xl">About E-Buy Shop</h1>
+        <p className="mx-auto max-w-xl text-lg leading-relaxed text-primary-200">
           We started with a simple idea: everyone deserves access to quality products at
           fair prices, delivered fast and backed by outstanding support.
         </p>
       </section>
 
-      {/* Stats */}
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <section className="mx-auto max-w-5xl px-4 py-14 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-2 gap-6 text-center md:grid-cols-4">
           {STATS.map(({ label, value }) => (
-            <div key={label} className="bg-white rounded-2xl border border-gray-100 shadow-sm py-8">
+            <div key={label} className="rounded-2xl border border-gray-100 bg-white py-8 shadow-sm dark:border-slate-800 dark:bg-slate-900">
               <p className="text-4xl font-extrabold text-primary-700">{value}</p>
-              <p className="text-sm text-gray-500 mt-1">{label}</p>
+              <p className="mt-1 text-sm text-gray-500 dark:text-slate-400">{label}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Mission */}
-      <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-14 text-center">
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h2>
-        <p className="text-gray-600 leading-relaxed">
+      <section className="mx-auto max-w-3xl px-4 pb-14 text-center sm:px-6 lg:px-8">
+        <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-slate-100">Our Mission</h2>
+        <p className="leading-relaxed text-gray-600 dark:text-slate-300">
           E-Buy Shop is dedicated to making online shopping simple, trustworthy, and
           enjoyable. We partner with top suppliers to bring you authentic products across
-          electronics, fashion, jewelry, and more — all with transparent pricing, fast
+          power banks, earbuds, chargers, and more - all with transparent pricing, fast
           shipping, and a 30-day return guarantee.
         </p>
       </section>
 
-      {/* Team */}
-      <section className="bg-gray-50 py-14 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-10">Meet the Team</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+      <section className="bg-gray-50 px-4 py-14 dark:bg-slate-950">
+        <div className="mx-auto max-w-4xl text-center">
+          <h2 className="mb-10 text-2xl font-bold text-gray-900 dark:text-slate-100">Meet the Team</h2>
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
             {TEAM.map(({ name, role, emoji }) => (
-              <div key={name} className="bg-white rounded-2xl border border-gray-100 shadow-sm py-10 flex flex-col items-center gap-3">
+              <div key={name} className="flex flex-col items-center gap-3 rounded-2xl border border-gray-100 bg-white py-10 shadow-sm dark:border-slate-800 dark:bg-slate-900">
                 <span className="text-5xl">{emoji}</span>
-                <p className="font-bold text-gray-900">{name}</p>
-                <p className="text-sm text-gray-500">{role}</p>
+                <p className="font-bold text-gray-900 dark:text-slate-100">{name}</p>
+                <p className="text-sm text-gray-500 dark:text-slate-400">{role}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 px-4 text-center">
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">Ready to shop?</h2>
+      <section className="px-4 py-16 text-center">
+        <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-slate-100">Ready to shop?</h2>
         <Link
           to="/products"
-          className="inline-block bg-primary-600 hover:bg-primary-700 text-white font-bold px-10 py-3 rounded-full transition-colors"
+          className="inline-block rounded-full bg-primary-600 px-10 py-3 font-bold text-white transition-colors hover:bg-primary-700"
         >
           Browse Products
         </Link>

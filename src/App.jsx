@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { CartProvider } from "./context/CartContext";
 import Navbar from "./components/Navbar";
@@ -14,12 +14,29 @@ import About from "./pages/About";
 export default function App() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [aiOpen, setAiOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    setDarkMode(savedTheme ? savedTheme === "dark" : prefersDark);
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", darkMode);
+    localStorage.setItem("theme", darkMode ? "dark" : "light");
+  }, [darkMode]);
 
   return (
     <CartProvider>
       <Router>
-        <div className="flex flex-col min-h-screen">
-          <Navbar onSearchOpen={() => setSearchOpen(true)} onAiOpen={() => setAiOpen(true)} />
+        <div className="flex min-h-screen flex-col bg-gray-50 text-gray-900 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100">
+          <Navbar
+            darkMode={darkMode}
+            onSearchOpen={() => setSearchOpen(true)}
+            onAiOpen={() => setAiOpen(true)}
+            onToggleDarkMode={() => setDarkMode((value) => !value)}
+          />
 
           <main className="flex-1">
             <Routes>

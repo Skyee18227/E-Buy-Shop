@@ -1,6 +1,16 @@
 import { useState, useEffect } from "react";
 
-const BASE = "https://fakestoreapi.com";
+const BASE = process.env.REACT_APP_API_BASE_URL || "/api";
+
+export async function fetchStoreJson(path) {
+  const response = await fetch(`${BASE}${path}`);
+
+  if (!response.ok) {
+    throw new Error(`API returned ${response.status}`);
+  }
+
+  return await response.json();
+}
 
 export function useProducts(category = "") {
   const [products, setProducts] = useState([]);
@@ -9,21 +19,18 @@ export function useProducts(category = "") {
 
   useEffect(() => {
     setLoading(true);
+    setError(null);
     const url = category
-      ? `${BASE}/products/category/${encodeURIComponent(category)}`
-      : `${BASE}/products`;
+      ? `/products/category/${encodeURIComponent(category)}`
+      : "/products";
 
-    fetch(url)
-      .then((r) => {
-        if (!r.ok) throw new Error("Failed to fetch products");
-        return r.json();
-      })
+    fetchStoreJson(url)
       .then((data) => {
         setProducts(data);
         setLoading(false);
       })
       .catch((err) => {
-        setError(err.message);
+        setError(err.message || "Failed to fetch products");
         setLoading(false);
       });
   }, [category]);
@@ -39,17 +46,14 @@ export function useProduct(id) {
   useEffect(() => {
     if (!id) return;
     setLoading(true);
-    fetch(`${BASE}/products/${id}`)
-      .then((r) => {
-        if (!r.ok) throw new Error("Product not found");
-        return r.json();
-      })
+    setError(null);
+    fetchStoreJson(`/products/${id}`)
       .then((data) => {
         setProduct(data);
         setLoading(false);
       })
       .catch((err) => {
-        setError(err.message);
+        setError(err.message || "Product not found");
         setLoading(false);
       });
   }, [id]);
@@ -61,8 +65,7 @@ export function useCategories() {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch(`${BASE}/products/categories`)
-      .then((r) => r.json())
+    fetchStoreJson("/products/categories")
       .then(setCategories)
       .catch(() => setCategories([]));
   }, []);

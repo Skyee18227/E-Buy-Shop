@@ -2,6 +2,7 @@
   "name": "e-buy-shop",
   "version": "1.0.0",
   "private": true,
+  "proxy": "http://localhost:5000",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -9,6 +10,7 @@
     "react-scripts": "5.0.1"
   },
   "scripts": {
+    "api": "node server/index.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

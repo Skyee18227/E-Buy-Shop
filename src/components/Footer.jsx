@@ -1,26 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "../assets/image.png";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 mt-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Brand */}
+    <footer className="mt-16 bg-gray-900 text-gray-300 transition-colors duration-300 dark:bg-slate-900 dark:text-slate-400">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           <div>
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-2xl"></span>
+            <div className="mb-3 flex items-center gap-2">
+              <img
+                src={logo}
+                alt="E-Buy logo"
+                className="h-10 w-10 rounded-full object-cover"
+              />
               <span className="text-xl font-extrabold text-white">E-Buy</span>
             </div>
-            <p className="text-sm leading-relaxed text-gray-400">
+            <p className="text-sm leading-relaxed text-gray-400 dark:text-slate-400">
               Your one-stop online store. Quality products at unbeatable prices,
               delivered fast to your door.
             </p>
           </div>
 
-          {/* Quick links */}
           <div>
-            <h3 className="text-white font-semibold mb-3">Quick Links</h3>
+            <h3 className="mb-3 font-semibold text-white">Quick Links</h3>
             <ul className="space-y-2 text-sm">
               {[
                 { to: "/", label: "Home" },
@@ -29,7 +32,7 @@ export default function Footer() {
                 { to: "/about", label: "About Us" },
               ].map(({ to, label }) => (
                 <li key={to}>
-                  <Link to={to} className="hover:text-white transition-colors">
+                  <Link to={to} className="transition-colors hover:text-white">
                     {label}
                   </Link>
                 </li>
@@ -37,19 +40,18 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
-            <h3 className="text-white font-semibold mb-3">Contact</h3>
-            <ul className="space-y-2 text-sm text-gray-400">
+            <h3 className="mb-3 font-semibold text-white">Contact</h3>
+            <ul className="space-y-2 text-sm text-gray-400 dark:text-slate-400">
               <li>support@ebuyshop.com</li>
               <li>+1 (800) 123-4567</li>
-              <li>Mon – Fri, 9 am – 6 pm EST</li>
+              <li>Mon - Fri, 9 am - 6 pm EST</li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-700 mt-10 pt-6 text-center text-xs text-gray-500">
-          © {new Date().getFullYear()} E-Buy Shop. All rights reserved.
+        <div className="mt-10 border-t border-gray-700 pt-6 text-center text-xs text-gray-500 dark:border-slate-800 dark:text-slate-500">
+          Copyright {new Date().getFullYear()} E-Buy Shop. All rights reserved.
         </div>
       </div>
     </footer>

@@ -18,7 +18,7 @@ function StarRating({ rate, count }) {
           </svg>
         ))}
       </div>
-      <span className="text-xs text-gray-500">({count})</span>
+      <span className="text-xs text-gray-500 dark:text-slate-400">({count})</span>
     </div>
   );
 }
@@ -27,8 +27,8 @@ export default function ProductCard({ product }) {
   const { addToCart } = useCart();
 
   return (
-    <div className="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 flex flex-col group overflow-hidden">
-      <Link to={`/products/${product.id}`} className="block overflow-hidden bg-gray-50 aspect-square">
+    <div className="group flex flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-shadow hover:shadow-md dark:border-slate-800 dark:bg-slate-900">
+      <Link to={`/products/${product.id}`} className="block overflow-hidden bg-gray-50 aspect-square dark:bg-slate-950">
         <img
           src={product.image}
           alt={product.title}
@@ -38,17 +38,17 @@ export default function ProductCard({ product }) {
       </Link>
 
       <div className="flex flex-col flex-1 p-4 gap-2">
-        <span className="text-xs uppercase tracking-wide text-primary-600 font-medium">
+        <span className="text-xs font-medium uppercase tracking-wide text-primary-600 dark:text-primary-400">
           {product.category}
         </span>
         <Link to={`/products/${product.id}`}>
-          <h3 className="text-sm font-semibold text-gray-800 line-clamp-2 hover:text-primary-600 transition-colors leading-snug">
+          <h3 className="line-clamp-2 text-sm font-semibold leading-snug text-gray-800 transition-colors hover:text-primary-600 dark:text-slate-100 dark:hover:text-primary-400">
             {product.title}
           </h3>
         </Link>
         <StarRating rate={product.rating?.rate || 0} count={product.rating?.count || 0} />
         <div className="mt-auto flex items-center justify-between pt-2">
-          <span className="text-lg font-bold text-gray-900">
+          <span className="text-lg font-bold text-gray-900 dark:text-slate-100">
             ${product.price.toFixed(2)}
           </span>
           <button

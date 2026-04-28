@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { useParams, Link } from "react-router-dom";
-import { useProduct, useProducts } from "../hooks/useFakeStore";
-import { useCart } from "../context/CartContext";
+import { Link, useParams } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
+import { useCart } from "../context/CartContext";
+import { useProduct, useProducts } from "../hooks/useFakeStore";
 
 function StarRating({ rate, count }) {
   const full = Math.round(rate);
@@ -12,7 +12,7 @@ function StarRating({ rate, count }) {
         {Array.from({ length: 5 }).map((_, i) => (
           <svg
             key={i}
-            className={`w-5 h-5 ${i < full ? "text-amber-400" : "text-gray-200"}`}
+            className={`h-5 w-5 ${i < full ? "text-amber-400" : "text-gray-200"}`}
             fill="currentColor"
             viewBox="0 0 20 20"
           >
@@ -20,7 +20,7 @@ function StarRating({ rate, count }) {
           </svg>
         ))}
       </div>
-      <span className="text-sm text-gray-500">{rate} ({count} reviews)</span>
+      <span className="text-sm text-gray-500 dark:text-slate-400">{rate} ({count} reviews)</span>
     </div>
   );
 }
@@ -28,7 +28,7 @@ function StarRating({ rate, count }) {
 function Spinner() {
   return (
     <div className="flex justify-center py-24">
-      <div className="w-10 h-10 border-4 border-primary-200 border-t-primary-600 rounded-full animate-spin" />
+      <div className="h-10 w-10 animate-spin rounded-full border-4 border-primary-200 border-t-primary-600" />
     </div>
   );
 }
@@ -53,90 +53,71 @@ export default function ProductDetail() {
   if (loading) return <Spinner />;
   if (error || !product) {
     return (
-      <div className="max-w-7xl mx-auto px-4 py-24 text-center">
-        <p className="text-gray-500 text-lg">Product not found.</p>
+      <div className="mx-auto max-w-7xl px-4 py-24 text-center">
+        <p className="text-lg text-gray-500 dark:text-slate-400">Product not found.</p>
         <Link to="/products" className="mt-4 inline-block text-primary-600 hover:underline">
-          ← Back to Products
+          Back to Products
         </Link>
       </div>
     );
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      {/* Breadcrumb */}
-      <nav className="text-sm text-gray-400 mb-6 flex items-center gap-1">
+    <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+      <nav className="mb-6 flex items-center gap-1 text-sm text-gray-400 dark:text-slate-500">
         <Link to="/" className="hover:text-primary-600">Home</Link>
         <span>/</span>
         <Link to="/products" className="hover:text-primary-600">Products</Link>
         <span>/</span>
-        <span className="capitalize text-gray-600">{product.category}</span>
+        <span className="capitalize text-gray-600 dark:text-slate-300">{product.category}</span>
       </nav>
 
-      {/* Product grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-        {/* Image */}
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-sm flex items-center justify-center p-10 aspect-square">
-          <img
-            src={product.image}
-            alt={product.title}
-            className="max-h-full object-contain"
-          />
+      <div className="mb-16 grid grid-cols-1 gap-12 lg:grid-cols-2">
+        <div className="flex aspect-square items-center justify-center rounded-2xl border border-gray-100 bg-white p-10 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+          <img src={product.image} alt={product.title} className="max-h-full object-contain" />
         </div>
 
-        {/* Details */}
         <div className="flex flex-col gap-5">
-          <span className="text-xs uppercase tracking-widest text-primary-600 font-semibold">
+          <span className="text-xs font-semibold uppercase tracking-widest text-primary-600">
             {product.category}
           </span>
-          <h1 className="text-3xl font-extrabold text-gray-900 leading-tight">
+          <h1 className="text-3xl font-extrabold leading-tight text-gray-900 dark:text-slate-100">
             {product.title}
           </h1>
           <StarRating rate={product.rating?.rate || 0} count={product.rating?.count || 0} />
-          <p className="text-4xl font-bold text-gray-900">${product.price.toFixed(2)}</p>
-          <p className="text-gray-600 leading-relaxed">{product.description}</p>
+          <p className="text-4xl font-bold text-gray-900 dark:text-slate-100">${product.price.toFixed(2)}</p>
+          <p className="leading-relaxed text-gray-600 dark:text-slate-300">{product.description}</p>
 
-          <div className="flex items-center gap-4 mt-2">
+          <div className="mt-2 flex items-center gap-4">
             <button
               onClick={handleAddToCart}
-              className={`flex-1 sm:flex-none px-8 py-3 rounded-full font-bold text-sm transition-all ${
+              className={`rounded-full px-8 py-3 text-sm font-bold transition-all sm:flex-none ${
                 added
                   ? "bg-green-500 text-white"
-                  : "bg-primary-600 hover:bg-primary-700 active:scale-95 text-white"
+                  : "bg-primary-600 text-white hover:bg-primary-700 active:scale-95"
               }`}
             >
-              {added ? "✓ Added to Cart" : "Add to Cart"}
+              {added ? "Added to Cart" : "Add to Cart"}
             </button>
             {inCart && (
-              <Link
-                to="/cart"
-                className="text-sm text-primary-600 hover:underline font-medium"
-              >
+              <Link to="/cart" className="text-sm font-medium text-primary-600 hover:underline">
                 View Cart ({inCart.qty})
               </Link>
             )}
           </div>
 
-          {/* Perks */}
-          <ul className="mt-4 space-y-2 text-sm text-gray-500">
-            <li className="flex items-center gap-2">
-              <span></span> Free shipping on orders over $50
-            </li>
-            <li className="flex items-center gap-2">
-              <span></span> 30-day hassle-free returns
-            </li>
-            <li className="flex items-center gap-2">
-              <span></span> Secure, encrypted checkout
-            </li>
+          <ul className="mt-4 space-y-2 text-sm text-gray-500 dark:text-slate-400">
+            <li>Free shipping on orders over $50</li>
+            <li>30-day hassle-free returns</li>
+            <li>Secure, encrypted checkout</li>
           </ul>
         </div>
       </div>
 
-      {/* Related products */}
       {relatedFiltered.length > 0 && (
         <section>
-          <h2 className="text-xl font-bold text-gray-800 mb-6">You may also like</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <h2 className="mb-6 text-xl font-bold text-gray-800 dark:text-slate-100">You may also like</h2>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {relatedFiltered.map((p) => (
               <ProductCard key={p.id} product={p} />
             ))}

@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "title": "VoltCore 10000mAh PowerBank",
+    "price": 29.99,
+    "description": "Compact 10000mAh power bank with dual USB output, fast recharge support, and LED battery indicator.",
+    "category": "PowerBank",
+    "image": "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?auto=format&fit=crop&w=900&q=80",
+    "rating": {
+      "rate": 4.7,
+      "count": 182
+    }
+  },
+  {
+    "id": 2,
+    "title": "Titan 20000mAh Fast Charge PowerBank",
+    "price": 49.5,
+    "description": "High-capacity power bank with USB-C PD output, pass-through charging, and travel-friendly design.",
+    "category": "PowerBank",
+    "image": "https://images.unsplash.com/photo-1585338107529-13afc5f02586?auto=format&fit=crop&w=900&q=80",
+    "rating": {
+      "rate": 4.8,
+      "count": 96
+    }
+  },
+  {
+    "id": 3,
+    "title": "PocketMag Magnetic PowerBank",
+    "price": 39.0,
+    "description": "Slim magnetic wireless power bank built for daily top-ups with secure snap alignment and USB-C backup charging.",
+    "category": "PowerBank",
+    "image": "https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=900&q=80",
+    "rating": {
+      "rate": 4.6,
+      "count": 134
+    }
+  },
+  {
+    "id": 4,
+    "title": "AirPulse True Wireless Earbuds",
+    "price": 59.75,
+    "description": "Noise-isolating earbuds with touch controls, deep bass tuning, and a pocket charging case.",
+    "category": "Earbuds",
+    "image": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?auto=format&fit=crop&w=900&q=80",
+    "rating": {
+      "rate": 4.5,
+      "count": 88
+    }
+  },
+  {
+    "id": 5,
+    "title": "Nimbus ANC Earbuds",
+    "price": 79.2,
+    "description": "Active-noise-cancelling earbuds with transparency mode, low-latency audio, and all-day comfort.",
+    "category": "Earbuds",
+    "image": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=900&q=80",
+    "rating": {
+      "rate": 4.8,
+      "count": 201
+    }
+  },
+  {
+    "id": 6,
+    "title": "FitBeat Sport Earbuds",
+    "price": 44.4,
+    "description": "Sweat-resistant sport earbuds with secure ear fins, punchy sound, and quick pairing.",
+    "category": "Earbuds",
+    "image": "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?auto=format&fit=crop&w=900&q=80",
+    "rating": {
+      "rate": 4.4,
+      "count": 154
+    }
+  },
+  {
+    "id": 7,
+    "title": "ChargePro 20W USB-C Adapter",
+    "price": 18.99,
+    "description": "Fast 20W wall adapter with compact foldable design for phones, earbuds, and small tablets.",
+    "category": "Adapter & Charger",
+    "image": "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=900&q=80",
+    "rating": {
+      "rate": 4.5,
+      "count": 117
+    }
+  },
+  {
+    "id": 8,
+    "title": "MaxVolt 65W GaN Charger",
+    "price": 54.5,
+    "description": "Multi-device GaN charger with USB-C PD output and enough power for phones, tablets, and laptops.",
+    "category": "Adapter & Charger",
+    "image": "https://images.unsplash.com/photo-1615526675159-e248c3021d3f?auto=format&fit=crop&w=900&q=80",
+    "rating": {
+      "rate": 4.7,
+      "count": 143
+    }
+  },
+  {
+    "id": 9,
+    "title": "DuoPort Car Charger",
+    "price": 24.95,
+    "description": "Reliable dual-port car charger with one USB-C fast charge port and one USB-A port for passengers.",
+    "category": "Adapter & Charger",
+    "image": "https://images.unsplash.com/photo-1625842268584-8f3296236761?auto=format&fit=crop&w=900&q=80",
+    "rating": {
+      "rate": 4.2,
+      "count": 63
+    }
+  },
+  {
+    "id": 10,
+    "title": "TravelCube Universal Adapter",
+    "price": 36.25,
+    "description": "Universal travel adapter with interchangeable plugs and surge protection for international charging.",
+    "category": "Adapter & Charger",
+    "image": "https://images.unsplash.com/photo-1587033411391-5d9e51cce126?auto=format&fit=crop&w=900&q=80",
+    "rating": {
+      "rate": 4.4,
+      "count": 75
+    }
+  },
+  {
+    "id": 11,
+    "title": "EchoLite Mini Earbuds",
+    "price": 34.9,
+    "description": "Lightweight daily earbuds with balanced sound, clear call microphones, and easy one-tap controls.",
+    "category": "Earbuds",
+    "image": "https://images.unsplash.com/photo-1545127398-14699f92334b?auto=format&fit=crop&w=900&q=80",
+    "rating": {
+      "rate": 4.6,
+      "count": 112
+    }
+  },
+  {
+    "id": 12,
+    "title": "FlashCharge 30W USB-C Charger",
+    "price": 27.3,
+    "description": "Portable 30W charger with smart temperature control and rapid charging support for modern devices.",
+    "category": "Adapter & Charger",
+    "image": "https://images.unsplash.com/photo-1550009158-9ebf69173e03?auto=format&fit=crop&w=900&q=80",
+    "rating": {
+      "rate": 4.5,
+      "count": 91
+    }
+  }
+]
